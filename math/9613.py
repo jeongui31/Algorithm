@@ -1,7 +1,11 @@
-# t = int(input())
+from math import gcd
 
-# for _ in range(t):
-#     nums = list(map(int, input().split()))
-#     for i in range(1,len(nums)):
-#         while nums[i+1]!=0:
-#             nums[i]=nums[i]//nums[i+1]
+t = int(input())
+
+for _ in range(t):
+    nums = list(map(int, input().split()))
+    total = 0
+    for i in range(1, len(nums)):
+        for j in range(i+1, len(nums)):
+            total += gcd(nums[i], nums[j])
+    print(total)
